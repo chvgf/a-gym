@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const ContentBoxItemWrapper = styled.div`
-  width: 100px;
-  height: 100px;
+const ContentBoxItemWrapper = styled.section`
+  width: 250px;
+  height: 333px;
   margin: 10px;
   padding: 10px;
+  background-color: #252525;
+  color: #fff;
+  border: 1px solid #1d1d1d;
 `;
 
 function ContentBoxItem(props: any) {

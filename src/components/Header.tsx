@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { MainBg03 } from "../imges";
 
-const HeaderCompWrapper = styled.div`
+const HeaderCompWrapper = styled.header`
   width: 70%;
   height: 25rem;
   overflow: auto;
@@ -10,7 +10,7 @@ const HeaderCompWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const HeaderBg = styled.header`
+const HeaderBg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${MainBg03});

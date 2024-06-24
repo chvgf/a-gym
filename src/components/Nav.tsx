@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const NavCompWrapper = styled.div`
+const NavCompWrapper = styled.nav`
   position: fixed;
   width: 100%;
   height: 50px;
@@ -14,7 +14,7 @@ const NavCompWrapper = styled.div`
 `;
 
 function Nav(props: any) {
-  // 브랜드로고 || 주변헬스장, 지역검색, 지도검색, 이벤트, 커뮤니티?  || 로그인, 회원가입, 검색창
+  // 브랜드로고 || 주변헬스장, 지역검색, 지도검색, 이벤트, 커뮤니티?  || 로그인, 회원가입, 검색창     스크롤이벤트로 컬러 바꾸깅
   return (
     <NavCompWrapper>
       <div>네브바입니담마마마마마마</div>
