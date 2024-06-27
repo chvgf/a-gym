@@ -72,10 +72,10 @@ function ContentBox(props: any) {
     <ContentBoxCompWrapper>
       <FilterBox>필터버튼들들들</FilterBox>
       <ContentList>
-        {itemTest.map((itemTestMap) => {
+        {itemTest.map((itemTestMap, index) => {
           return (
             <ContentBoxItem
-              key={1}
+              key={index}
               title={itemTestMap.title}
               content={itemTestMap.content}
               img={itemTestMap.img}

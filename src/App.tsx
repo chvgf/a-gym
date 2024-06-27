@@ -5,6 +5,7 @@ import DetailPg from "./pages/DetailPg";
 import Stttt from "./Stttt"; /* 천준우 메모장 */
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+import Admin from "./Admin";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <GlobalStyle />
         <Routes>
+          <Route path="/admin" element={<Admin />}></Route> {/* 관리자 테스트 */}
           <Route path="/st" element={<Stttt />}></Route> {/* 천준우 메모장 */}
           <Route path="/" element={<MainPg />}></Route>
           <Route path="/detail" element={<DetailPg />}></Route>

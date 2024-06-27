@@ -76,7 +76,7 @@ function Stttt(props: any) {
   // };
   // console.log(is(19));
 
-  return <div>메모장{}</div>;
+  return <div>메모장</div>;
 }
 
 export default Stttt;
