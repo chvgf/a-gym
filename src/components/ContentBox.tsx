@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ContentBoxItem from "./ContentBoxItem";
+import axios from "axios";
 
 const ContentBoxCompWrapper = styled.main`
   width: 100%;
@@ -27,6 +28,7 @@ const ContentList = styled.div`
   background-color: cadetblue;
 `;
 function ContentBox(props: any) {
+  const [contentBoxItemsRes, setContentBoxItemsRes]: any = useState([]);
   // tset용
   interface ContentBoxItems {
     title: string;
@@ -34,45 +36,24 @@ function ContentBox(props: any) {
     img: string;
     convenience: string;
   }
-  const itemTest: ContentBoxItems[] = [
-    {
-      title: "준우짐",
-      content: "준우짐내용",
-      img: "사진경로",
-      convenience: "편의시설들",
-    },
-    {
-      title: "준우짐2",
-      content: "준우짐내용2",
-      img: "사진경로2",
-      convenience: "편의시설들2",
-    },
-    {
-      title: "준우짐3",
-      content: "준우짐내용3",
-      img: "사진경로3",
-      convenience: "편의시설들3",
-    },
-    {
-      title: "준우짐3",
-      content: "준우짐내용3",
-      img: "사진경로3",
-      convenience: "편의시설들3",
-    },
-    {
-      title: "준우짐3",
-      content: "준우짐내용3",
-      img: "사진경로3",
-      convenience: "편의시설들3",
-    },
-  ];
+  useEffect(() => {
+    const getItems = async () => {
+      try {
+        const response: any = await axios.get(`${process.env.REACT_APP_ADDRESS}/content`);
+        setContentBoxItemsRes(response.data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getItems();
+  }, []);
 
   // 콘텐트 박스형태로 나열하고 더보기 만들어서 밑으로 쭊쭊 가게.. 맨 위에 소트기능 만들어서 검색가능하게 만들기, db 연동 수정
   return (
     <ContentBoxCompWrapper>
       <FilterBox>필터버튼들들들</FilterBox>
       <ContentList>
-        {itemTest.map((itemTestMap, index) => {
+        {contentBoxItemsRes.map((itemTestMap: ContentBoxItems, index: number) => {
           return (
             <ContentBoxItem
               key={index}
@@ -84,6 +65,7 @@ function ContentBox(props: any) {
           );
         })}
       </ContentList>
+      {contentBoxItemsRes.title}
     </ContentBoxCompWrapper>
   );
 }

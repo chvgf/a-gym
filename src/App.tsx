@@ -1,11 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+
+import Stttt from "./Stttt"; /* 천준우 메모장 */
+import Admin from "./admin/Admin"; /* 관리자 페이지 */
 import MainPg from "./pages/MainPg";
 import DetailPg from "./pages/DetailPg";
-import Stttt from "./Stttt"; /* 천준우 메모장 */
-import reset from "styled-reset";
-import { createGlobalStyle } from "styled-components";
-import Admin from "./Admin";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}

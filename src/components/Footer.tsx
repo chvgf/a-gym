@@ -8,6 +8,7 @@ const FooterCompWrapper = styled.footer`
 `;
 
 function Footer(props: any) {
+  /* 디자인은 난중에 하.......ㄹ...ㄹ... */
   return <FooterCompWrapper>여기부턴 푸터야~</FooterCompWrapper>;
 }
 
