@@ -14,10 +14,12 @@ function Admin(props: any) {
   const [insertContent, setInsertContent] = useState();
   const [insertImg, setInsertImg] = useState();
   const [insertConvenience, setInsertConvenience] = useState();
+  const [insertRegion, setInsertRegion] = useState();
   const changeTitle = (e: any) => setInsertTitle(e.target.value); // 타이틀
   const changeContent = (e: any) => setInsertContent(e.target.value); //콘텐
   const changeImg = (e: any) => setInsertImg(e.target.value); //이미지
   const changeConvenience = (e: any) => setInsertConvenience(e.target.value); //편의
+  const changeRegion = (e: any) => setInsertRegion(e.target.value); //편의
   const handleTest = async () => {
     await axios.post(`${process.env.REACT_APP_ADDRESS}/admin/testInsert`, adminContentBoxItemUp);
   };
@@ -58,6 +60,13 @@ function Admin(props: any) {
           convenience입력<span>*</span>
         </label>
         <textarea id="convenience" placeholder="convenience입력" value={insertConvenience} onChange={changeConvenience} />
+        <br />
+        <br />
+        {/* region */}
+        <label htmlFor="region">
+          region입력<span>*</span>
+        </label>
+        <textarea id="region" placeholder="region입력" value={insertRegion} onChange={changeRegion} />
         <br />
         <br />
       </form>

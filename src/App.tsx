@@ -17,8 +17,8 @@ function App() {
       <BrowserRouter>
         <GlobalStyle />
         <Routes>
-          <Route path="/admin" element={<Admin />}></Route> {/* 관리자 테스트 */}
           <Route path="/st" element={<Stttt />}></Route> {/* 천준우 메모장 */}
+          <Route path="/admin" element={<Admin />}></Route> {/* 관리자 테스트 */}
           <Route path="/" element={<MainPg />}></Route>
           <Route path="/detail" element={<DetailPg />}></Route>
         </Routes>
