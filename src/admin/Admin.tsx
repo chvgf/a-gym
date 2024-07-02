@@ -15,11 +15,13 @@ function Admin(props: any) {
   const [insertImg, setInsertImg] = useState();
   const [insertConvenience, setInsertConvenience] = useState();
   const [insertRegion, setInsertRegion] = useState();
+  const [insertRoadName, setInsertRoadName] = useState();
   const changeTitle = (e: any) => setInsertTitle(e.target.value); // 타이틀
   const changeContent = (e: any) => setInsertContent(e.target.value); //콘텐
   const changeImg = (e: any) => setInsertImg(e.target.value); //이미지
   const changeConvenience = (e: any) => setInsertConvenience(e.target.value); //편의
-  const changeRegion = (e: any) => setInsertRegion(e.target.value); //편의
+  const changeRegion = (e: any) => setInsertRegion(e.target.value); //지역
+  const changeRoadName = (e: any) => setInsertRoadName(e.target.value); //도로명주소
   const handleTest = async () => {
     await axios.post(`${process.env.REACT_APP_ADDRESS}/admin/testInsert`, adminContentBoxItemUp);
   };
@@ -28,6 +30,7 @@ function Admin(props: any) {
     content: insertContent,
     img: insertImg,
     convenience: insertConvenience,
+    region: { region: insertRegion, roadName: insertRoadName },
     // 정보 뭐 넣을지 생각
   };
 
@@ -67,6 +70,13 @@ function Admin(props: any) {
           region입력<span>*</span>
         </label>
         <textarea id="region" placeholder="region입력" value={insertRegion} onChange={changeRegion} />
+        <br />
+        <br />
+        {/* region */}
+        <label htmlFor="RoadName">
+          RoadName입력<span>*</span>
+        </label>
+        <textarea id="RoadName" placeholder="RoadName입력" value={insertRoadName} onChange={changeRoadName} />
         <br />
         <br />
       </form>

@@ -16,9 +16,18 @@ const ContentBoxCompWrapper = styled.main`
 `;
 const FilterBox = styled.div`
   width: 66%;
-  height: 100px;
+  height: 4rem;
   background-color: red;
   margin: 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    width: 77px;
+    height: 33px;
+    margin: 10px;
+  }
 `;
 const ContentList = styled.div`
   display: flex;
@@ -62,7 +71,15 @@ function ContentBox(props: any) {
   // 콘텐트 박스형태로 나열하고 더보기 만들어서 밑으로 쭊쭊 가게.. 맨 위에 소트기능 만들어서 검색가능하게 만들기, db 연동 수정
   return (
     <ContentBoxCompWrapper>
-      <FilterBox>필터버튼들들들</FilterBox>
+      <FilterBox>
+        <div>테마별 검색</div>
+        <div>
+          <button>지역별</button>
+          <button>편의별</button>
+          <button>피티샵</button>
+          <button>여성전용</button>
+        </div>
+      </FilterBox>
       <ContentList>
         {contentBoxItemsRes.map((itemTestMap: ContentBoxItems, index: number) => {
           return (
