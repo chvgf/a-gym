@@ -20,13 +20,19 @@ const HeaderBg = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  p {
-    font-size: 1rem;
+  p:first-child {
+    font-size: 1.5rem;
     color: #fff;
+    margin: 15px 0 15px 30px;
+  }
+  p:last-child {
+    font-size: 2rem;
+    color: #fff;
+    margin: 15px 0 15px 30px;
   }
 `;
 function Header(props: any) {
-  // 백그라운드 이미지, 설명글...
+  // 백그라운드 이미지, 설명글...  사진 왼쪽 살짝 이상
   return (
     <HeaderCompWrapper>
       <HeaderBg>
